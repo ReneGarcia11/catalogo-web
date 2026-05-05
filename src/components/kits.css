@@ -1,0 +1,170 @@
+/* ── Kits específico ── */
+
+/* Header del kit */
+.kits {
+  padding-bottom: 0;
+}
+
+.kits-header {
+  text-align: center;
+  padding: 32px 20px 20px;
+  background: #FAF7F3;
+  border-bottom: 1px solid #E8DECE;
+}
+
+.kits-header p:first-child {
+  font-size: 0.5rem;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #9B8E82;
+  margin-bottom: 8px;
+}
+
+.kits-header h2 {
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 2rem;
+  color: #18140F;
+  font-weight: 400;
+  margin: 0 0 8px 0;
+}
+
+.kits-header h2 span {
+  color: #B89A5E;
+}
+
+.kits-header p:last-child {
+  font-size: 0.875rem;
+  color: #6B6055;
+  margin: 0;
+}
+
+/* Grid de kits */
+.kits-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 16px;
+  padding: 20px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* Kit card - mantén tus estilos actuales de Kitcard */
+.kit-card {
+  background: #FFFDF9;
+  border: 1px solid #E8DECE;
+  border-radius: 4px;
+  padding: 24px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.kit-card:hover {
+  border-color: #B89A5E;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+.kit-card.selected {
+  border-color: #B89A5E;
+  background: rgba(184, 154, 94, 0.05);
+}
+
+/* Back button */
+.back-btn {
+  background: none;
+  border: 1px solid #E8DECE;
+  color: #6B6055;
+  padding: 6px 16px;
+  cursor: pointer;
+  font-family: "DM Sans", system-ui, sans-serif;
+  font-size: 0.6875rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-top: 12px;
+  transition: all 0.2s;
+  border-radius: 100px;
+}
+
+.back-btn:hover {
+  border-color: #B89A5E;
+  color: #B89A5E;
+}
+
+/* Barra de progreso del kit */
+.kit-progress-bar {
+  height: 3px;
+  background: #E8DECE;
+  position: sticky;
+  top: 56px;
+  z-index: 99;
+}
+
+.kit-progress-fill {
+  height: 100%;
+  background: #B89A5E;
+  transition: width 0.3s ease;
+}
+
+/* Card seleccionada */
+.pc.pc-selected {
+  background: #FFFDF9;
+}
+
+.pc.pc-selected .pc-body {
+  background: rgba(184, 154, 94, 0.03);
+}
+
+/* Botón confirmar flotante */
+.kit-confirm-floating {
+  position: sticky;
+  bottom: 0;
+  background: linear-gradient(to top, #FAF7F3 80%, transparent);
+  padding: 20px;
+  z-index: 50;
+}
+
+.kit-confirm-btn {
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  display: block;
+  padding: 16px;
+  background: #18140F;
+  color: #B89A5E;
+  border: none;
+  font-family: "DM Sans", system-ui, sans-serif;
+  font-size: 0.75rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  border-radius: 4px;
+}
+
+.kit-confirm-btn:hover:not(:disabled) {
+  background: #B89A5E;
+  color: #18140F;
+  transform: translateY(-1px);
+}
+
+.kit-confirm-btn:disabled {
+  background: #E8DECE;
+  color: #9B8E82;
+  cursor: not-allowed;
+}
+
+/* Ajustes responsive */
+@media (min-width: 660px) {
+  .kits-header {
+    padding: 40px 32px 24px;
+  }
+  
+  .kits-grid {
+    padding: 32px;
+  }
+  
+  .kit-progress-bar {
+    top: 60px;
+  }
+}
