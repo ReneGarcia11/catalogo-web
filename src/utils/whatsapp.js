@@ -1,5 +1,5 @@
 export const sendToWhatsApp = (cart) => {
-  const phone = "3334751285"; 
+  const numerowhats = import.meta.env.NUMERO_WHATSAPP
 
   let message = "Hola, quiero pedir:\n\n";
 
@@ -7,7 +7,7 @@ export const sendToWhatsApp = (cart) => {
     message += `• ${item.nombre} (${item.marca})\n`;
   });
 
-  const url = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
+  const url = `https://wa.me/${numerowhats}?text=${encodeURIComponent(message)}`;
 
   window.open(url, "_blank");
 };
