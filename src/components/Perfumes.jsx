@@ -11,7 +11,7 @@ const Perfumes = ({ openCart }) => {
   const [error, setError] = useState(null);
 
   const [filtroActivo, setFiltroActivo] = useState("Todas");
-  const [addedProductId, setAddedProductId] = useState(null); // Para animación de confirmación
+  const [addedProductId, setAddedProductId] = useState(null);
   
   const gamas = ["Top Picks", "Exclusivos", "Selecta", "Favoritos", "Basicos"];
   
@@ -48,10 +48,23 @@ const Perfumes = ({ openCart }) => {
     return p.genero?.toLowerCase() === filtroActivo.toLowerCase();
   });
 
-  // Función para agregar al carrito sin abrirlo
+  // Función para agregar al carrito con propiedades estandarizadas
   const handleAddToCart = (p) => {
     if (p.stock > 0) {
-      addToCart(p);
+      // Crear un objeto con las propiedades estandarizadas
+      const cartItem = {
+        id: p.id,
+        tipo: 'pieza',
+        nombre: p.nombre || p.n || 'Perfume',
+        marca: p.marca || p.m || '',
+        precio: p.precio || p.p || 0,
+        cantidad: 1,
+        genero: p.genero || p.g || '',
+        gama: p.gama || p.gm || '',
+        img: getImageUrl(p)
+      };
+      
+      addToCart(cartItem);
       
       // Mostrar confirmación visual
       setAddedProductId(p.id);
@@ -126,7 +139,7 @@ const Perfumes = ({ openCart }) => {
                         <div className={`pc-img-w g-${p.genero?.toLowerCase() || 'unisex'}`}>
                           <img 
                             src={imageUrl || "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='250' fill='%23F2EDE5'%3E%3Crect width='200' height='250'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-family='serif' font-size='48' fill='%23B89A5E' opacity='0.3'%3E🕯️%3C/text%3E%3C/svg%3E"}
-                            alt={p.nombre} 
+                            alt={p.nombre || p.n || 'Perfume'} 
                             className="pc-img"
                             loading="lazy"
                             onError={(e) => {
@@ -145,17 +158,17 @@ const Perfumes = ({ openCart }) => {
 
                           {/* Gender tag */}
                           <div className="gender-tag">
-                            <span className="gender-tag-text">{p.genero}</span>
+                            <span className="gender-tag-text">{p.genero || p.g || ''}</span>
                           </div>
                         </div>
 
                         {/* Card body */}
                         <div className="pc-body">
                           <div className="pc-bar" style={{ background: 'var(--gold)' }}></div>
-                          <p className="pc-brand">{p.marca}</p>
-                          <h4 className="pc-name">{p.nombre}</h4>
-                          <p className="pc-gama">{p.gama}</p>
-                          <p className="pc-price">${p.precio?.toLocaleString()}</p>
+                          <p className="pc-brand">{p.marca || p.m || ''}</p>
+                          <h4 className="pc-name">{p.nombre || p.n || 'Perfume'}</h4>
+                          <p className="pc-gama">{p.gama || p.gm || ''}</p>
+                          <p className="pc-price">${(p.precio || p.p || 0)?.toLocaleString()}</p>
                           
                           {/* Add to cart button */}
                           <button

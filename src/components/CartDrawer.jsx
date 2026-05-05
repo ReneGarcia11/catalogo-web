@@ -112,6 +112,8 @@ const CartDrawer = ({
       }
       return;
     }
+    // Solo llamar a onConfirm, sin abrir WhatsApp aquí
+    // La apertura de WhatsApp se maneja en Cart.js
     if (onConfirm) onConfirm();
   };
 
