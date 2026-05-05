@@ -76,15 +76,14 @@ const CartDrawer = ({
   };
 
   
-  const totalItems = cart.length;
   const subtotal = cart.reduce((sum, item) => {
-  const precio = item.precio || 0;
-  const qty = item.cantidad || item.qty || 1;
-  return sum + precio * qty;
-}, 0);
+    const precio = item.precio || 0;
+    const qty = item.cantidad || item.qty || 1;
+    return sum + precio * qty;
+  }, 0);
 
-const IVA = subtotal * 0.16;
-const totalPrecio = subtotal + IVA;
+  const IVA = subtotal * 0.16;
+  const totalPrecio = subtotal + IVA;
 
   
   const handleClearCart = () => {
@@ -277,18 +276,31 @@ const totalPrecio = subtotal + IVA;
             </div>
           )}
 
-          {/* Total */}
-          {totalPrecio > 0 && (
+          {/* Total con desglose */}
+          {subtotal > 0 && (
             <div className="d-total-block">
               <div className="d-total-text">
                 <span className="d-total-lbl">Subtotal</span>
-<span className="d-total-val">${subtotal.toLocaleString('es-MX')}</span>
+                <span className="d-total-val" style={{ fontSize: '1.25rem', marginBottom: '4px' }}>
+                  ${subtotal.toLocaleString('es-MX')}
+                </span>
 
-<span className="d-total-lbl">IVA (16%)</span>
-<span className="d-total-val">${IVA.toLocaleString('es-MX')}</span>
+                <span className="d-total-lbl">IVA (16%)</span>
+                <span className="d-total-val" style={{ fontSize: '1.25rem', marginBottom: '4px' }}>
+                  ${IVA.toLocaleString('es-MX')}
+                </span>
 
-<span className="d-total-lbl">Total del pedido</span>
-<span className="d-total-val">${totalPrecio.toLocaleString('es-MX')}</span>
+                <div style={{ 
+                  borderTop: '1px solid var(--border)', 
+                  marginTop: '8px', 
+                  paddingTop: '8px' 
+                }}>
+                  <span className="d-total-lbl" style={{ fontSize: '0.5rem' }}>Total del pedido</span>
+                  <span className="d-total-val">
+                    ${totalPrecio.toLocaleString('es-MX')}
+                  </span>
+                </div>
+                
                 <p className="d-total-sub">MXN · Pago contra entrega</p>
               </div>
             </div>

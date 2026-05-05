@@ -10,9 +10,7 @@ const Emprendedor = ({ openCart }) => {
       nombre:
         tipo === "fem"
           ? "Caja Femenina (20 piezas)"
-          : tipo === "masc"
-          ? "Caja Masculina (20 piezas)"
-          : "Caja Mixta (20 piezas)",
+          : "Caja Masculina (20 piezas)",
       precio: 6800,
       tipo: "emp",
       cantidad: 1,
@@ -69,9 +67,9 @@ const Emprendedor = ({ openCart }) => {
 
         .emp-grid {
           display: grid;
-          grid-template-columns: repeat(3, 1fr);
+          grid-template-columns: repeat(2, 1fr);
           gap: 40px;
-          max-width: 1200px;
+          max-width: 900px;
           margin: 0 auto;
         }
 
@@ -184,7 +182,7 @@ const Emprendedor = ({ openCart }) => {
           border-color: #18140f;
         }
 
-        @media (max-width: 960px) {
+        @media (max-width: 768px) {
           .emp {
             padding: 60px 20px;
           }
@@ -219,7 +217,7 @@ const Emprendedor = ({ openCart }) => {
         <h2>
           Caja <span>emprendedor</span>
         </h2>
-        <p>20 piezas · 3 opciones · Precio mayoreo</p>
+        <p>20 piezas · 2 opciones · Precio mayoreo</p>
       </div>
 
       <div className="emp-grid">
@@ -267,30 +265,6 @@ const Emprendedor = ({ openCart }) => {
           </ul>
 
           <button className="emp-btn" onClick={() => handleAdd("masc")}>
-            Seleccionar caja
-          </button>
-        </div>
-
-        {/* MIXTA */}
-        <div className="emp-card">
-          <h3>20 <span>piezas</span></h3>
-          <h4>Caja Mixta</h4>
-          <p>
-            Lo mejor de ambos mundos. 10 femeninas + 10 masculinas
-            para máxima variedad de clientes.
-          </p>
-
-          <div className="emp-price">
-            $6,800 <span>$340/pieza</span>
-          </div>
-
-          <ul>
-            <li>10 femeninas + 10 masculinas</li>
-            <li>20 piezas originales</li>
-            <li>Precio mayoreo garantizado</li>
-          </ul>
-
-          <button className="emp-btn" onClick={() => handleAdd("mix")}>
             Seleccionar caja
           </button>
         </div>

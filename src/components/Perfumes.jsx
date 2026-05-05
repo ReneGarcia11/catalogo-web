@@ -18,8 +18,7 @@ const Perfumes = ({ openCart }) => {
   const botonesFiltro = [
     { label: "Todas", valor: "Todas" },
     { label: "🌸 Mujer", valor: "Mujer" },
-    { label: "🔵 Hombre", valor: "Hombre" },
-    { label: "✦ Unisex", valor: "Mixto" }
+    { label: "🔵 Hombre", valor: "Hombre" }
   ];
 
   useEffect(() => {
