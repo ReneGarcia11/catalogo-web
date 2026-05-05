@@ -415,6 +415,46 @@ body {
   display: block;
 }
 
+/* ── Contenedor de acciones ── */
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* ── Botón Panel ── */
+.panel-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  border: 1px solid rgba(184, 154, 94, 0.25);
+  padding: 0 14px;
+  height: 34px;
+  color: var(--gold);
+  font-size: 0.5rem;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  background: transparent;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.2s;
+  border-radius: 2px;
+  font-family: var(--sans, system-ui, sans-serif);
+  white-space: nowrap;
+}
+
+.panel-btn:hover {
+  border-color: var(--gold);
+  background: rgba(184, 154, 94, 0.06);
+}
+
+.panel-btn svg {
+  flex-shrink: 0;
+}
+
+
+
+
 /* Botón del carrito - pegado a la derecha */
 .cart-btn {
   display: flex;

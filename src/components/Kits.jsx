@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Kitcard from './Kitcard';
 import { supabase } from "../data/Client";
 import { useCart } from "../context/useCart";
-import "./Kits.css";
+
 
 const Kits = ({ openCart }) => {
   const { addToCart } = useCart();

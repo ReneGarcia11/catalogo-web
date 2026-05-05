@@ -15,12 +15,7 @@ export default function Hero() {
           Para regalo, coleccionar o emprender · Guadalajara
         </p>
 
-        <div className="hero-buttons">
-          <button>ARMAR MI KIT</button>
-          <button>PIEZAS ÚNICAS</button>
-          <button>EMPRENDEDOR</button>
-          
-        </div>
+        
       </div>
     </section>
   );
