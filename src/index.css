@@ -1,0 +1,547 @@
+@import "tailwindcss";
+
+body {
+  background-color: #FAF9F6;
+}
+
+/* Puedes dejar tu body con el color crema de fondo aquí si gustas */
+body {
+  background-color: #FAF9F6;
+}
+
+
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+
+.hero {
+  margin: 0%;
+  height: 75vh;
+  background-image: url('/src/assets/background.jpeg'); 
+  background-size: cover;
+  background-position: center 18%;
+  position: relative;
+  color: white;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(0,0,0,0.2),
+    rgba(0,0,0,0.8)
+  );
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.hero-top {
+  font-size: 12px;
+  letter-spacing: 3px;
+  color: #d4b97a;
+}
+
+.hero h1 {
+  font-size: 48px;
+  font-weight: 300;
+}
+
+.hero span {
+  color: #d4b97a;
+  font-style: italic;
+}
+
+.hero-sub {
+  
+  font-size: 14px;
+  opacity: 0.7;
+}
+
+.hero-buttons {
+  margin-top: 20px;
+  display: flex;
+  gap: 10px;
+}
+
+.hero-buttons button {
+  padding: 10px 20px;
+  border: 1px solid #d4b97a;
+  background: transparent;
+  color: #d4b97a;
+  cursor: pointer;
+}
+
+.hero-buttons button:first-child {
+  background: #d4b97a;
+  color: black;
+}
+
+/* !----------------------------------------------------------------------------------------------- */
+
+/* Componente Benefits (componente 2 */
+
+.benefits {
+  background: #18140f;
+  height: 20vh;
+  color: #d4b97a;
+  display: flex;
+  justify-content: space-around;
+  padding: 20px 10px;
+  text-align: center;
+  align-items: center;
+
+}
+
+.benefit h3 {
+  font-size: 16px;
+  margin-bottom: 8px;
+}
+
+.benefit p {
+  font-size: 12px;
+  color: #aaa;
+}
+
+
+/* !----------------------------------------------------------------------------------------------- */
+/*  Kits componetnte 3 */
+
+.kits-header { background: #f5f2ed;
+  text-align: center;
+  align-items: center;
+  padding: 20px 15px 20px;
+  border-bottom: 1px solid #e5ddd2;
+}
+
+/* PASO 1 DE 2 */
+.kits-header p:first-child {
+  font-size: 10px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: #a89c8f;
+  margin-bottom: 10px;
+}
+
+/* TITULO */
+.kits-header h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 40px;
+  font-weight: 300;
+  color: #1a140f;
+}
+
+/* "caja" en dorado */
+.kits-header h2 span {
+  color: #d4b97a;
+  font-style: italic;
+}
+
+/* SUBTEXTO */
+.kits-header p:last-child {
+  font-size: 14px;
+  color: #7a6f63;
+  
+}
+
+
+
+
+
+
+
+.kits-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.kit-card {
+  display: flex;
+  flex-direction: column;
+  background: #f5f2ed;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.kit-card.selected {
+  border: 3px solid #d4b97a;
+}
+
+/* IMAGEN */
+.kit-img {
+  height: 200px;
+  background: url('/src/assets/background.jpeg') center/cover;
+}
+
+.kit-img.pink {
+  background: url('/src/assets/kit2.jpg') center/cover;
+}
+
+/* INFO */
+.kit-info {
+  padding: 20px;
+}
+
+.kit-info h3 {
+  font-size: 20 px;
+  font-family: serif;
+}
+
+.kit-info p {
+  margin: 10px 0;
+  color: #666;
+}
+
+.kit-info button {
+  width: 100%;
+  padding: 14px;
+  margin-top: 20px;
+
+  background: #1a140f; /* negro elegante */
+  color: #d4b97a;
+
+  border: none;
+
+  font-size: 12px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+
+  cursor: pointer;
+}
+
+/*!---------------------------------------------------------------------------------- */
+
+/* perfumes componente 3 */
+
+/* CONTENEDOR */
+.perfumes {
+  background: #f5f2ed;
+  padding: 20px;
+}
+
+/* TOP BAR */
+.perfumes-top {
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+/* FILTROS */
+.perfumes-filters {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.perfumes-filters button {
+  padding: 8px 14px;
+  border-radius: 20px;
+  border: 1px solid #ddd;
+  background: transparent;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.perfumes-filters .active {
+  border: 1px solid #d4b97a;
+  color: #d4b97a;
+}
+
+/* SECCIÓN */
+.perfume-section {
+  margin-bottom: 30px;
+}
+
+.perfume-section h3 {
+  font-family: 'Cormorant Garamond', serif;
+  margin-bottom: 10px;
+}
+
+/* GRID */
+.perfume-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 10px;
+}
+
+/* CARD */
+.perfume-card {
+  background: white;
+}
+
+/* IMAGEN */
+.perfume-img {
+  height: 200px;
+  background: #ccc;
+}
+
+/* INFO */
+.perfume-info {
+  padding: 8px 10px;
+}
+
+.brand {
+  font-size: 10px;
+  color: #999;
+  padding: 0%;
+}
+
+.perfume-info h4 {
+  margin: 2px 0;
+  font-size: 12px;
+}
+
+.tag {
+  font-size: 5px;
+  color: #999;
+}
+
+/* Footer*/
+
+.footer {
+  background: #18140f;
+  color: #a89c8f;
+  text-align: center;
+  padding: 30px 20px;
+}
+
+/* TEXTO PRINCIPAL */
+.footer-title {
+  font-size: 8px;
+  letter-spacing: 3px;
+  margin-bottom: 10px;
+}
+
+/* WHATSAPP */
+.footer-contact {
+  font-size: 10px;
+  color: #d4b97a;
+  margin-bottom: 10px;
+}
+
+/* UBICACIÓN */
+.footer-location {
+  font-size: 9px;
+  letter-spacing: 2px;
+}
+
+/*drawer */
+
+.cart-drawer {
+  position: fixed;
+  right: -400px;
+  top: 0;
+  width: 350px;
+  height: 100%;
+  background: #f7f2ec;
+  transition: 0.3s;
+  z-index: 2000;
+  padding: 20px;
+}
+
+.cart-drawer.open {
+  right: 0;
+}
+
+.cart-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.empty {
+  text-align: center;
+  margin-top: 50px;
+}
+
+.whatsapp-btn {
+  background: #a8d5b2;
+  border: none;
+  width: 100%;
+  padding: 12px;
+  margin-top: 20px;
+}
+
+.clear-btn {
+  width: 100%;
+  margin-top: 10px;
+  background: transparent;
+  border: 1px solid #ccc;
+  padding: 10px;
+}
+
+/*------------------------------------------------------------*/
+
+
+/* Header */
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 300;
+  background: var(--black, #18140F);
+  height: var(--hh, 56px);
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid rgba(184, 154, 94, 0.08);
+}
+
+.header-inner {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 12px;
+}
+
+/* Logo - pegado a la izquierda */
+.header-logo {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  flex-shrink: 0;
+  margin-left: 0;
+}
+
+.header-logo-img {
+  height: 48px;
+  width: auto;
+  display: block;
+}
+
+/* Botón del carrito - pegado a la derecha */
+.cart-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border: 1px solid rgba(184, 154, 94, 0.25);
+  padding: 0 14px;
+  height: 32px;
+  color: var(--gold, #B89A5E);
+  font-size: 0.5rem;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  transition: border-color 0.2s, background 0.2s;
+  border-radius: 2px;
+  background: transparent;
+  cursor: pointer;
+  font-family: var(--sans, "DM Sans", system-ui, sans-serif);
+  flex-shrink: 0;
+  margin-right: 0;
+  white-space: nowrap;
+}
+
+.cart-btn:hover {
+  border-color: var(--gold, #B89A5E);
+  background: rgba(184, 154, 94, 0.06);
+}
+
+.cart-count {
+  background: var(--gold, #B89A5E);
+  color: var(--black, #18140F);
+  font-weight: 700;
+  font-size: 0.4375rem;
+  min-width: 16px;
+  height: 16px;
+  border-radius: 100px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Desktop */
+@media (min-width: 660px) {
+  .header {
+    height: 72px;
+  }
+  
+  .header-inner {
+    padding: 0 16px;
+  }
+  
+  .header-logo-img {
+    height: 62px;
+  }
+  
+  .cart-btn {
+    font-size: 0.5625rem;
+    padding: 0 18px;
+    height: 36px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .header {
+    height: 80px;
+  }
+  
+  .header-inner {
+    padding: 0 20px;
+  }
+  
+  .header-logo-img {
+    height: 72px;
+  }
+}
+
+.cart-btn {
+  background: transparent;
+  border: 1px solid #d4b97ac0;
+  color: #d4b97ad5;
+  padding: 8px 16px;
+  font-size: 10px;
+  letter-spacing: 1px;
+  cursor: pointer;
+  
+}
+
+.cart-btn {
+  margin-right: 20px;
+}
+
+.cart-count {
+  margin-left: 10px;
+  background: #d4b97a;
+  color: #000;
+  padding: 2px 7px;
+  border-radius: 50%;
+}
+
+
+.menu {
+  display: flex;
+  gap: 40px;
+  padding: 10px 30px;
+  background: #f7f2ec;
+  border-bottom: 1px solid #e8decf;
+}
+
+.menu button {
+  background: none;
+  border: none;
+  font-size: 12px;
+  letter-spacing: 1px;
+  color: #6b6055;
+  cursor: pointer;
+  position: relative;
+}
+
+.menu button.active {
+  color: #000;
+}
+
+.menu button.active::after {
+  content: "";
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: #c8a96a;
+}
