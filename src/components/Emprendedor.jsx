@@ -1,7 +1,8 @@
 import React from "react";
 import { useCart } from "../context/useCart";
+import BackButton from "./BackButton";
 
-const Emprendedor = ({ openCart }) => {
+const Emprendedor = ({ openCart, onBack }) => {
   const { addToCart } = useCart();
 
   const handleAdd = (tipo) => {
@@ -211,6 +212,8 @@ const Emprendedor = ({ openCart }) => {
           }
         }
       `}</style>
+
+      {onBack && <BackButton onClick={onBack} />}
 
       <div className="emp-header">
         <p>PARA EMPRENDEDORES</p>

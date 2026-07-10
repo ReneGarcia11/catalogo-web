@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { useCart } from "../context/useCart";
 import { supabase } from "../data/Client";
+import BackButton from "./BackButton";
 import "./Perfumes.css";
 
-const Perfumes = ({ openCart }) => {
+const Perfumes = ({ openCart, onBack }) => {
   const { addToCart } = useCart();
 
   const [allPerfumes, setAllPerfumes] = useState([]);
@@ -76,6 +77,8 @@ const Perfumes = ({ openCart }) => {
 
   return (
     <>
+      {onBack && <BackButton onClick={onBack} />}
+
       {/* Filter bar */}
       <div className="fbar">
         {botonesFiltro.map((btn) => (

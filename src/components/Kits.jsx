@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Kitcard from './Kitcard';
 import { supabase } from "../data/Client";
 import { useCart } from "../context/useCart";
+import BackButton from "./BackButton";
 
 // Orden fijo de gamas
 const GAMAS_ORDER = ["Top Picks", "Exclusivos", "Selecta", "Favoritos", "Básicos"];
@@ -222,9 +223,7 @@ const Kits = ({ openCart }) => {
         <p>
           {selectedPerfumes.length} de {selectedKit} seleccionados · Máx {getMaxPerGama()} por gama
         </p>
-        <button onClick={handleBack} className="back-btn">
-          ← Cambiar caja
-        </button>
+        <BackButton onClick={handleBack} label="Cambiar caja" fixed={false} />
       </div>
 
       <div className="kit-progress-bar">

@@ -29,12 +29,18 @@ function HomePage() {
 
       {active === "kits" && <Kits />}
       {active === "piezas" && (
-        <Perfumes openCart={() => setOpenCart(true)} />
+        <Perfumes
+          openCart={() => setOpenCart(true)}
+          onBack={() => setActive("kits")}
+        />
       )}
 
       {/* 🔥 FIX AQUÍ */}
       {active === "emprendedor" && (
-        <Emprendedor openCart={() => setOpenCart(true)} />
+        <Emprendedor
+          openCart={() => setOpenCart(true)}
+          onBack={() => setActive("kits")}
+        />
       )}
 
       <Footer />
