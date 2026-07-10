@@ -21,7 +21,7 @@
 }
 
 .kits-header h2 {
-  font-family: "Cormorant Garamond", Georgia, serif;
+  font-family: var(--serif);
   font-size: 2rem;
   color: #18140F;
   font-weight: 400;
@@ -70,26 +70,6 @@
 }
 
 /* Back button */
-.back-btn {
-  background: none;
-  border: 1px solid #E8DECE;
-  color: #6B6055;
-  padding: 6px 16px;
-  cursor: pointer;
-  font-family: "DM Sans", system-ui, sans-serif;
-  font-size: 0.6875rem;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  margin-top: 12px;
-  transition: all 0.2s;
-  border-radius: 100px;
-}
-
-.back-btn:hover {
-  border-color: #B89A5E;
-  color: #B89A5E;
-}
-
 /* Barra de progreso del kit */
 .kit-progress-bar {
   height: 3px;
@@ -132,7 +112,7 @@
   background: #18140F;
   color: #B89A5E;
   border: none;
-  font-family: "DM Sans", system-ui, sans-serif;
+  font-family: var(--sans);
   font-size: 0.75rem;
   letter-spacing: 2px;
   text-transform: uppercase;

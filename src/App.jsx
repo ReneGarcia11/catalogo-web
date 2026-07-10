@@ -9,6 +9,7 @@ import Perfumes from "./components/Perfumes";
 import Emprendedor from "./components/Emprendedor";
 import Footer from "./components/Footer";
 import Cart from "./components/Cart";
+import FloatingWhatsApp from "./components/FloatingWhatsApp";
 
 const AdminLogin = lazy(() => import("./accesadmin/AdminLogin"));
 const AdminPerfumes = lazy(() => import("./admin/AdminPerfumes"));
@@ -22,18 +23,33 @@ function HomePage() {
   return (
     <>
       <Header onOpenCart={() => setOpenCart(true)} />
-      <Hero />
+      <Hero
+        onNavigate={(destino) => {
+          setActive(destino);
+          document
+            .getElementById("catalogo-menu")
+            ?.scrollIntoView({ behavior: "smooth", block: "start" });
+        }}
+      />
       <Benefits />
-      <Menu active={active} setActive={setActive} />
+      <div id="catalogo-menu">
+        <Menu active={active} setActive={setActive} />
+      </div>
 
       {active === "kits" && <Kits />}
       {active === "piezas" && (
-        <Perfumes openCart={() => setOpenCart(true)} />
+        <Perfumes
+          openCart={() => setOpenCart(true)}
+          onBack={() => setActive("kits")}
+        />
       )}
 
       {/* 🔥 FIX AQUÍ */}
       {active === "emprendedor" && (
-        <Emprendedor openCart={() => setOpenCart(true)} />
+        <Emprendedor
+          openCart={() => setOpenCart(true)}
+          onBack={() => setActive("kits")}
+        />
       )}
 
       <Footer />
@@ -102,6 +118,8 @@ function App() {
 
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
+
+        <FloatingWhatsApp />
       </Suspense>
     </BrowserRouter>
   );

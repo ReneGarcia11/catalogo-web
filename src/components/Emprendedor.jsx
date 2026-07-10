@@ -1,7 +1,8 @@
 import React from "react";
 import { useCart } from "../context/useCart";
+import BackButton from "./BackButton";
 
-const Emprendedor = ({ openCart }) => {
+const Emprendedor = ({ openCart, onBack }) => {
   const { addToCart } = useCart();
 
   const handleAdd = (tipo) => {
@@ -29,7 +30,7 @@ const Emprendedor = ({ openCart }) => {
         .emp {
           padding: 80px 40px;
           background: #f7f2ec;
-          font-family: "DM Sans", system-ui, -apple-system, sans-serif;
+          font-family: var(--sans);
         }
 
         .emp-header {
@@ -38,14 +39,14 @@ const Emprendedor = ({ openCart }) => {
         }
 
         .emp-header p {
-          font-family: "DM Sans", system-ui, -apple-system, sans-serif;
+          font-family: var(--sans);
           letter-spacing: 3px;
           font-size: 11px;
           color: #9c8c7a;
         }
 
         .emp-header h2 {
-          font-family: "Cormorant Garamond", Georgia, serif;
+          font-family: var(--serif);
           font-size: 42px;
           font-weight: 400;
           margin: 10px 0;
@@ -53,13 +54,13 @@ const Emprendedor = ({ openCart }) => {
         }
 
         .emp-header h2 span {
-          font-family: "Cormorant Garamond", Georgia, serif;
+          font-family: var(--serif);
           font-style: italic;
           color: #c8a96a;
         }
 
         .emp-header h2 + p {
-          font-family: "DM Sans", system-ui, -apple-system, sans-serif;
+          font-family: var(--sans);
           font-size: 13px;
           color: #9c8c7a;
           letter-spacing: 0.5px;
@@ -77,11 +78,11 @@ const Emprendedor = ({ openCart }) => {
           background: #fff;
           padding: 40px;
           border: 1px solid #e8decf;
-          font-family: "DM Sans", system-ui, -apple-system, sans-serif;
+          font-family: var(--sans);
         }
 
         .emp-card h3 {
-          font-family: "Cormorant Garamond", Georgia, serif;
+          font-family: var(--serif);
           font-size: 42px;
           font-weight: 400;
           color: #18140f;
@@ -90,14 +91,14 @@ const Emprendedor = ({ openCart }) => {
         }
 
         .emp-card h3 span {
-          font-family: "Cormorant Garamond", Georgia, serif;
+          font-family: var(--serif);
           font-size: 16px;
           font-style: italic;
           color: #9c8c7a;
         }
 
         .emp-card h4 {
-          font-family: "Cormorant Garamond", Georgia, serif;
+          font-family: var(--serif);
           font-size: 18px;
           font-weight: 400;
           color: #18140f;
@@ -105,7 +106,7 @@ const Emprendedor = ({ openCart }) => {
         }
 
         .emp-card p {
-          font-family: "DM Sans", system-ui, -apple-system, sans-serif;
+          font-family: var(--sans);
           font-size: 14px;
           color: #6b6055;
           margin-bottom: 20px;
@@ -114,7 +115,7 @@ const Emprendedor = ({ openCart }) => {
         }
 
         .emp-price {
-          font-family: "Cormorant Garamond", Georgia, serif;
+          font-family: var(--serif);
           font-size: 28px;
           margin-bottom: 20px;
           color: #18140f;
@@ -122,7 +123,7 @@ const Emprendedor = ({ openCart }) => {
         }
 
         .emp-price span {
-          font-family: "DM Sans", system-ui, -apple-system, sans-serif;
+          font-family: var(--sans);
           font-size: 11px;
           margin-left: 10px;
           background: rgba(184, 154, 94, 0.1);
@@ -139,7 +140,7 @@ const Emprendedor = ({ openCart }) => {
         }
 
         .emp-card ul li {
-          font-family: "DM Sans", system-ui, -apple-system, sans-serif;
+          font-family: var(--sans);
           margin-bottom: 8px;
           font-size: 13px;
           color: #6b6055;
@@ -166,7 +167,7 @@ const Emprendedor = ({ openCart }) => {
           border: 1px solid #b89a5e;
           background: transparent;
           color: #18140f;
-          font-family: "DM Sans", system-ui, -apple-system, sans-serif;
+          font-family: var(--sans);
           font-size: 9px;
           letter-spacing: 2.5px;
           text-transform: uppercase;
@@ -211,6 +212,8 @@ const Emprendedor = ({ openCart }) => {
           }
         }
       `}</style>
+
+      {onBack && <BackButton onClick={onBack} />}
 
       <div className="emp-header">
         <p>PARA EMPRENDEDORES</p>

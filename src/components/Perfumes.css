@@ -21,6 +21,52 @@
   display: none;
 }
 
+/* Barra de búsqueda */
+.search-bar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: #FFFFFF;
+  border-bottom: 1px solid #E8DECE;
+  padding: 10px 20px;
+  position: sticky;
+  top: 84px;
+  z-index: 99;
+}
+
+.search-bar-icon {
+  color: #9B8E82;
+  flex-shrink: 0;
+}
+
+.search-bar-input {
+  flex: 1;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-family: var(--sans);
+  font-size: 0.8125rem;
+  color: #18140F;
+}
+
+.search-bar-input::placeholder {
+  color: #9B8E82;
+}
+
+.search-bar-clear {
+  border: none;
+  background: none;
+  color: #9B8E82;
+  cursor: pointer;
+  font-size: 0.75rem;
+  padding: 4px;
+  flex-shrink: 0;
+}
+
+.search-bar-clear:hover {
+  color: #18140F;
+}
+
 .fc {
   border: 1px solid #E8DECE;
   background: transparent;
@@ -35,7 +81,7 @@
   white-space: nowrap;
   flex-shrink: 0;
   cursor: pointer;
-  font-family: "DM Sans", system-ui, sans-serif;
+  font-family: var(--sans);
 }
 
 .fc:hover {
@@ -70,7 +116,7 @@
 }
 
 .gama-name {
-  font-family: "Cormorant Garamond", Georgia, serif;
+  font-family: var(--serif);
   font-size: 1rem;
   color: #18140F;
   font-weight: 400;
@@ -271,7 +317,7 @@
 }
 
 .pc-name {
-  font-family: "Cormorant Garamond", Georgia, serif;
+  font-family: var(--serif);
   font-size: 0.875rem;
   color: #18140F;
   line-height: 1.2;
@@ -292,7 +338,7 @@
 }
 
 .pc-price {
-  font-family: "Cormorant Garamond", Georgia, serif;
+  font-family: var(--serif);
   font-size: 0.8125rem;
   color: #B89A5E;
   font-weight: 300;
@@ -315,7 +361,7 @@
   white-space: nowrap;
   overflow: hidden;
   cursor: pointer;
-  font-family: "DM Sans", system-ui, sans-serif;
+  font-family: var(--sans);
 }
 
 .add-btn:hover {
@@ -341,7 +387,7 @@
 }
 
 .empty-t {
-  font-family: "Cormorant Garamond", Georgia, serif;
+  font-family: var(--serif);
   font-style: italic;
   font-size: 1.125rem;
   color: #6B6055;
@@ -374,7 +420,7 @@
 }
 
 .cp-txt {
-  font-family: "Cormorant Garamond", Georgia, serif;
+  font-family: var(--serif);
   font-style: italic;
   font-size: 1rem;
   color: #6B6055;

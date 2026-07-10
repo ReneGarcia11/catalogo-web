@@ -1,5 +1,14 @@
 @import "tailwindcss";
 
+:root {
+  --serif: "Cormorant Garamond", Georgia, serif;
+  --sans: "DM Sans", system-ui, -apple-system, sans-serif;
+}
+
+body {
+  font-family: var(--sans);
+}
+
 body {
   background-color: #FAF9F6;
 }
@@ -131,7 +140,7 @@ body {
 
 /* TITULO */
 .kits-header h2 {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: var(--serif);
   font-size: 40px;
   font-weight: 300;
   color: #1a140f;
@@ -190,8 +199,8 @@ body {
 }
 
 .kit-info h3 {
-  font-size: 20 px;
-  font-family: serif;
+  font-size: 20px;
+  font-family: var(--serif);
 }
 
 .kit-info p {
@@ -260,7 +269,7 @@ body {
 }
 
 .perfume-section h3 {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: var(--serif);
   margin-bottom: 10px;
 }
 
@@ -584,4 +593,180 @@ body {
   width: 100%;
   height: 2px;
   background: #c8a96a;
+}
+
+/* Botón flotante de WhatsApp */
+.floating-whatsapp {
+  position: fixed;
+  bottom: 22px;
+  right: 22px;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: #18140f;
+  color: #d4b97a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 6px 18px rgba(24, 20, 15, 0.35);
+  z-index: 999;
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.floating-whatsapp:hover {
+  background: #000;
+  transform: scale(1.06);
+}
+
+.floating-whatsapp-ping {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: #d4b97a;
+  opacity: 0.35;
+  animation: floating-whatsapp-pulse 2.4s ease-out infinite;
+}
+
+@keyframes floating-whatsapp-pulse {
+  0% {
+    transform: scale(1);
+    opacity: 0.35;
+  }
+  70% {
+    transform: scale(1.6);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1.6);
+    opacity: 0;
+  }
+}
+
+@media (max-width: 640px) {
+  .floating-whatsapp {
+    bottom: 16px;
+    right: 16px;
+    width: 50px;
+    height: 50px;
+  }
+}
+
+/* Botón "Atrás" reutilizable */
+.back-nav-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: none;
+  border: 1px solid #e8decf;
+  color: #6b6055;
+  padding: 8px 18px;
+  border-radius: 100px;
+  font-family: var(--sans);
+  font-size: 0.6875rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.back-nav-btn:hover {
+  border-color: #b89a5e;
+  color: #b89a5e;
+  background: #f7f2ec;
+}
+
+.back-nav-btn--fixed {
+  position: sticky;
+  top: 66px;
+  left: 30px;
+  z-index: 50;
+  margin: 14px 0 0 30px;
+  background: #fff;
+  box-shadow: 0 2px 10px rgba(24, 20, 15, 0.08);
+}
+/* Hero loop: cajita chica / cajita grande / minis destacados / caja emprendedora */
+.hero-loop {
+  margin-top: 32px;
+  width: 100%;
+  max-width: 640px;
+}
+
+.hero-loop-track {
+  display: grid;
+  grid-template-columns: 1fr;
+  position: relative;
+  min-height: 92px;
+}
+
+.hero-loop-slide {
+  grid-column: 1;
+  grid-row: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  padding: 16px 24px;
+  border: 1px solid rgba(212, 185, 122, 0.35);
+  border-radius: 8px;
+  background: rgba(24, 20, 15, 0.35);
+  backdrop-filter: blur(2px);
+  color: #fff;
+  cursor: pointer;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(6px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.hero-loop-slide.is-active {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+.hero-loop-slide:hover {
+  border-color: #d4b97a;
+}
+
+.hero-loop-icon {
+  font-size: 20px;
+}
+
+.hero-loop-title {
+  font-family: var(--serif);
+  font-size: 18px;
+  color: #d4b97a;
+}
+
+.hero-loop-text {
+  font-family: var(--sans);
+  font-size: 11px;
+  letter-spacing: 0.5px;
+  opacity: 0.85;
+  text-align: center;
+}
+
+.hero-loop-dots {
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+  margin-top: 14px;
+}
+
+.hero-loop-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.35);
+  transition: background 0.3s ease;
+}
+
+.hero-loop-dot.is-active {
+  background: #d4b97a;
+}
+
+@media (max-width: 640px) {
+  .hero-loop {
+    margin-top: 20px;
+  }
 }

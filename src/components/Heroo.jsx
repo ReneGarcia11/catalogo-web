@@ -1,4 +1,6 @@
-export default function Hero() {
+import HeroLoop from "./HeroLoop";
+
+export default function Hero({ onNavigate }) {
   return (
     <section className="hero">
       <div className="hero-overlay">
@@ -15,7 +17,7 @@ export default function Hero() {
           Para regalo, coleccionar o emprender · Guadalajara
         </p>
 
-        
+        <HeroLoop onNavigate={onNavigate} />
       </div>
     </section>
   );
