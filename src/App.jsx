@@ -23,9 +23,18 @@ function HomePage() {
   return (
     <>
       <Header onOpenCart={() => setOpenCart(true)} />
-      <Hero />
+      <Hero
+        onNavigate={(destino) => {
+          setActive(destino);
+          document
+            .getElementById("catalogo-menu")
+            ?.scrollIntoView({ behavior: "smooth", block: "start" });
+        }}
+      />
       <Benefits />
-      <Menu active={active} setActive={setActive} />
+      <div id="catalogo-menu">
+        <Menu active={active} setActive={setActive} />
+      </div>
 
       {active === "kits" && <Kits />}
       {active === "piezas" && (
