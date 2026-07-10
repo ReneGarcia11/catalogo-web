@@ -1,27 +1,22 @@
 import React from 'react'
 
+const items = [
+  { icon: '🎁', title: 'Regalo perfecto', text: 'Una caja personalizada que se siente lujosa' },
+  { icon: '✈️', title: 'Para viajar', text: 'Mini ideal para bolso o cambiar fragancia cada día' },
+  { icon: '🌹', title: 'Prueba primero', text: 'Descubre si un perfume es para ti antes del frasco grande' },
+  { icon: '💼', title: 'Emprende', text: 'Paquetes listos para revender en tu negocio' },
+]
+
 const Benefits = () => {
   return (
     <section className="benefits">
-      <div className="benefit">
-        <h3>🎁 Regalo perfecto</h3>
-        <p>Una caja personalizada que se siente lujosa</p>
-      </div>
-
-      <div className="benefit">
-        <h3>✈️ Para viajar</h3>
-        <p>Mini ideal para bolso o cambiar fragancia cada día</p>
-      </div>
-
-      <div className="benefit">
-        <h3>🌹 Prueba primero</h3>
-        <p>Descubre si un perfume es para ti antes del frasco grande</p>
-      </div>
-
-      <div className="benefit">
-        <h3>💼 Emprende</h3>
-        <p>Paquetes listos para revender en tu negocio</p>
-      </div>
+      {items.map((item) => (
+        <div className="benefit" key={item.title}>
+          <span className="benefit-icon" aria-hidden="true">{item.icon}</span>
+          <h3>{item.title}</h3>
+          <p>{item.text}</p>
+        </div>
+      ))}
     </section>
   )
 }
