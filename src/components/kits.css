@@ -21,7 +21,7 @@
 }
 
 .kits-header h2 {
-  font-family: "Cormorant Garamond", Georgia, serif;
+  font-family: var(--serif);
   font-size: 2rem;
   color: #18140F;
   font-weight: 400;
@@ -112,7 +112,7 @@
   background: #18140F;
   color: #B89A5E;
   border: none;
-  font-family: "DM Sans", system-ui, sans-serif;
+  font-family: var(--sans);
   font-size: 0.75rem;
   letter-spacing: 2px;
   text-transform: uppercase;

@@ -1,5 +1,14 @@
 @import "tailwindcss";
 
+:root {
+  --serif: "Cormorant Garamond", Georgia, serif;
+  --sans: "DM Sans", system-ui, -apple-system, sans-serif;
+}
+
+body {
+  font-family: var(--sans);
+}
+
 body {
   background-color: #FAF9F6;
 }
@@ -131,7 +140,7 @@ body {
 
 /* TITULO */
 .kits-header h2 {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: var(--serif);
   font-size: 40px;
   font-weight: 300;
   color: #1a140f;
@@ -190,8 +199,8 @@ body {
 }
 
 .kit-info h3 {
-  font-size: 20 px;
-  font-family: serif;
+  font-size: 20px;
+  font-family: var(--serif);
 }
 
 .kit-info p {
@@ -260,7 +269,7 @@ body {
 }
 
 .perfume-section h3 {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: var(--serif);
   margin-bottom: 10px;
 }
 
@@ -652,7 +661,7 @@ body {
   color: #6b6055;
   padding: 8px 18px;
   border-radius: 100px;
-  font-family: "DM Sans", system-ui, sans-serif;
+  font-family: var(--sans);
   font-size: 0.6875rem;
   letter-spacing: 1px;
   text-transform: uppercase;

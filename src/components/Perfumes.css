@@ -44,7 +44,7 @@
   border: none;
   outline: none;
   background: transparent;
-  font-family: "DM Sans", system-ui, sans-serif;
+  font-family: var(--sans);
   font-size: 0.8125rem;
   color: #18140F;
 }
@@ -81,7 +81,7 @@
   white-space: nowrap;
   flex-shrink: 0;
   cursor: pointer;
-  font-family: "DM Sans", system-ui, sans-serif;
+  font-family: var(--sans);
 }
 
 .fc:hover {
@@ -116,7 +116,7 @@
 }
 
 .gama-name {
-  font-family: "Cormorant Garamond", Georgia, serif;
+  font-family: var(--serif);
   font-size: 1rem;
   color: #18140F;
   font-weight: 400;
@@ -317,7 +317,7 @@
 }
 
 .pc-name {
-  font-family: "Cormorant Garamond", Georgia, serif;
+  font-family: var(--serif);
   font-size: 0.875rem;
   color: #18140F;
   line-height: 1.2;
@@ -338,7 +338,7 @@
 }
 
 .pc-price {
-  font-family: "Cormorant Garamond", Georgia, serif;
+  font-family: var(--serif);
   font-size: 0.8125rem;
   color: #B89A5E;
   font-weight: 300;
@@ -361,7 +361,7 @@
   white-space: nowrap;
   overflow: hidden;
   cursor: pointer;
-  font-family: "DM Sans", system-ui, sans-serif;
+  font-family: var(--sans);
 }
 
 .add-btn:hover {
@@ -387,7 +387,7 @@
 }
 
 .empty-t {
-  font-family: "Cormorant Garamond", Georgia, serif;
+  font-family: var(--serif);
   font-style: italic;
   font-size: 1.125rem;
   color: #6B6055;
@@ -420,7 +420,7 @@
 }
 
 .cp-txt {
-  font-family: "Cormorant Garamond", Georgia, serif;
+  font-family: var(--serif);
   font-style: italic;
   font-size: 1rem;
   color: #6B6055;
