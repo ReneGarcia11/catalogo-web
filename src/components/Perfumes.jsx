@@ -12,9 +12,19 @@ const Perfumes = ({ openCart, onBack }) => {
   const [error, setError] = useState(null);
 
   const [filtroActivo, setFiltroActivo] = useState("Todas");
+  const [gamaActiva, setGamaActiva] = useState("Todas");
+  const [busqueda, setBusqueda] = useState("");
   const [addedProductId, setAddedProductId] = useState(null);
   
   const gamas = ["Top Picks", "Exclusivos", "Selecta", "Favoritos", "Basicos"];
+
+  const botonesGama = [
+    { label: "Todas", valor: "Todas" },
+    { label: "🔥 Top Picks", valor: "Top Picks" },
+    { label: "✨ Exclusivos", valor: "Exclusivos" },
+    { label: "Selecta", valor: "Selecta" },
+    { label: "Básicos", valor: "Basicos" },
+  ];
   
   const botonesFiltro = [
     { label: "Todas", valor: "Todas" },
@@ -44,9 +54,31 @@ const Perfumes = ({ openCart, onBack }) => {
     return perfume.img_storage_url || perfume.img || null;
   };
 
+  const normalizar = (texto) =>
+    (texto || "")
+      .toString()
+      .toLowerCase()
+      .normalize("NFD")
+      .replace(/[\u0300-\u036f]/g, "");
+
   const perfumesFiltrados = allPerfumes.filter((p) => {
-    if (filtroActivo === "Todas") return true;
-    return p.genero?.toLowerCase() === filtroActivo.toLowerCase();
+    const pasaGenero =
+      filtroActivo === "Todas" ||
+      p.genero?.toLowerCase() === filtroActivo.toLowerCase();
+
+    const pasaGama =
+      gamaActiva === "Todas" ||
+      (p.gama || p.gm || "").toLowerCase() === gamaActiva.toLowerCase();
+
+    const termino = normalizar(busqueda.trim());
+    const pasaBusqueda =
+      termino === "" ||
+      normalizar(p.nombre || p.n).includes(termino) ||
+      normalizar(p.marca || p.m).includes(termino) ||
+      normalizar(p.gama || p.gm).includes(termino) ||
+      normalizar(p.genero || p.g).includes(termino);
+
+    return pasaGenero && pasaGama && pasaBusqueda;
   });
 
   // Función para agregar al carrito con propiedades estandarizadas
@@ -87,6 +119,57 @@ const Perfumes = ({ openCart, onBack }) => {
             onClick={() => setFiltroActivo(btn.valor)}
             className={`fc ${filtroActivo === btn.valor ? 'on' : ''}`}
             aria-pressed={filtroActivo === btn.valor}
+          >
+            {btn.label}
+          </button>
+        ))}
+      </div>
+
+      {/* Búsqueda */}
+      <div className="search-bar">
+        <svg
+          width="16"
+          height="16"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          aria-hidden="true"
+          className="search-bar-icon"
+        >
+          <circle cx="11" cy="11" r="8" />
+          <line x1="21" y1="21" x2="16.65" y2="16.65" />
+        </svg>
+        <input
+          type="text"
+          value={busqueda}
+          onChange={(e) => setBusqueda(e.target.value)}
+          placeholder="Buscar por nombre, marca o palabra clave..."
+          className="search-bar-input"
+          aria-label="Buscar perfumes"
+        />
+        {busqueda && (
+          <button
+            type="button"
+            className="search-bar-clear"
+            onClick={() => setBusqueda("")}
+            aria-label="Limpiar búsqueda"
+          >
+            ✕
+          </button>
+        )}
+      </div>
+
+      {/* Filtro por gama */}
+      <div className="fbar">
+        {botonesGama.map((btn) => (
+          <button
+            key={btn.valor}
+            onClick={() => setGamaActiva(btn.valor)}
+            className={`fc ${gamaActiva === btn.valor ? 'on' : ''}`}
+            aria-pressed={gamaActiva === btn.valor}
           >
             {btn.label}
           </button>
@@ -198,7 +281,11 @@ const Perfumes = ({ openCart, onBack }) => {
           <span className="empty-i">🔍</span>
           <p className="empty-t">No encontramos perfumes en esta categoría.</p>
           <button 
-            onClick={() => setFiltroActivo("Todas")}
+            onClick={() => {
+              setFiltroActivo("Todas");
+              setGamaActiva("Todas");
+              setBusqueda("");
+            }}
             className="fc on"
             style={{ marginTop: '16px' }}
           >
