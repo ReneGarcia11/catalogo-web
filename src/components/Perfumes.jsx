@@ -93,7 +93,7 @@ const Perfumes = ({ openCart }) => {
       {loading && (
         <div className="empty">
           <div className="ld-b" style={{ margin: '0 auto 16px' }}></div>
-          <p className="empty-t">Buscando las mejores fragancias...</p>
+          <p className="empty-t">Curando tu selección de fragancias...</p>
         </div>
       )}
 
