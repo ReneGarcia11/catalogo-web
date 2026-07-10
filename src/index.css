@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 :root {
-  --serif: "Cormorant Garamond", Georgia, serif;
+  --serif: "Playfair Display", "Cormorant Garamond", Georgia, serif;
   --sans: "DM Sans", system-ui, -apple-system, sans-serif;
 }
 
