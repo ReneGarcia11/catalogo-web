@@ -10,6 +10,7 @@ import Emprendedor from "./components/Emprendedor";
 import Footer from "./components/Footer";
 import Cart from "./components/Cart";
 import FloatingWhatsApp from "./components/FloatingWhatsApp";
+import AdminShortcut from "./components/AdminShortcut";
 
 const AdminLogin = lazy(() => import("./accesadmin/AdminLogin"));
 const AdminPerfumes = lazy(() => import("./admin/AdminPerfumes"));
@@ -83,6 +84,7 @@ function NotFoundPage() {
 function App() {
   return (
     <BrowserRouter>
+      <AdminShortcut />
       <Suspense
         fallback={
           <div className="min-h-screen bg-[#F7F2EC] flex flex-col items-center justify-center gap-4">
