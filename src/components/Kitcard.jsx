@@ -15,7 +15,10 @@ const Kitcard = ({
       <div className="kit-img"></div>
 
       <div className="kit-info">
-        <h3>{cantidad} <span>minis</span></h3>
+        <h3 className="bc-meta">
+          <span className="bc-n">{cantidad}</span>
+          <span className="bc-unit">minis</span>
+        </h3>
 
         <p className="desc">{descripcion}</p>
 
