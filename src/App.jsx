@@ -9,6 +9,7 @@ import Perfumes from "./components/Perfumes";
 import Emprendedor from "./components/Emprendedor";
 import Footer from "./components/Footer";
 import Cart from "./components/Cart";
+import FloatingWhatsApp from "./components/FloatingWhatsApp";
 
 const AdminLogin = lazy(() => import("./accesadmin/AdminLogin"));
 const AdminPerfumes = lazy(() => import("./admin/AdminPerfumes"));
@@ -102,6 +103,8 @@ function App() {
 
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
+
+        <FloatingWhatsApp />
       </Suspense>
     </BrowserRouter>
   );
